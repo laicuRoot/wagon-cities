@@ -2,34 +2,21 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import selectCity from '../actions/index';
+import activeCity from '../actions/index';
 
-// class City extends Component {
-//   handleClick = () => {
-//     this.props.selectCity(this.props.city);
-//   }
+class City extends Component {
+  handleClick = () => {
+    this.props.activeCity(this.props.city);
+  }
 
-//   render() {
-//     return (
-//       <div onClick={this.handleClick} className="list-group-item" role="button">
-//         {this.props.city.name}
-//       </div>
-//     );
-//   }
-// }
-
-const City = (props) => {
-
-  // const handleClick = () => {
-  //   props.selectCity(props.city);
-  // }
-
-  return (
-    <div onClick={() => props.selectCity(props.city)} className="list-group-item">
-      {props.city.name}
-    </div>
-  );
-};
+  render() {
+    return (
+      <div onClick={this.handleClick} className="list-group-item" role="button">
+        {this.props.city.name}
+      </div>
+    );
+  }
+}
 
 // function mapStateToProps(state) {
 //   return {
@@ -38,7 +25,7 @@ const City = (props) => {
 // // }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ selectCity: selectCity }, dispatch);
+  return bindActionCreators({ activeCity: activeCity }, dispatch);
 }
 
 export default connect(null, mapDispatchToProps)(City);

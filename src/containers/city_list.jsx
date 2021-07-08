@@ -21,23 +21,6 @@ class CityList extends Component {
   }
 }
 
-// const CityList = ({ cities }) => {
-//   useEffect(() => {
-//     // Anything in here is fired on component mount.
-//     setCities();
-//     return () => {
-//       // Anything in here is fired on component unmount.
-//     };
-//   }, []);
-
-//   return (
-//     <div className="cities">
-//       {cities.map(({ name, address, slug }) => {
-//         return <City key={name} name={name} address={address} slug={slug} />;
-//       })}
-//     </div>
-//   );
-// };
 
 function mapStateToProps(state) {
   return {
