@@ -3,6 +3,10 @@ body {
   background-color: black;
 }
 
+img {
+  max-width: 100%;
+}
+
 .app {
   margin-top: 20px;
   margin-bottom: 20px;
@@ -26,4 +30,8 @@ body {
 .list-group-item {
   background-color: transparent;
   cursor: pointer;
+}
+
+.selected {
+  border: 4px solid red;
 }

@@ -1,8 +1,8 @@
 export default function (state, action) {
   if (state === undefined) {
-    return [];
+    return "";
   }
-  if (action.type === 'CITY_SELECTED') {
+  if (action.type === 'SET_CITY') {
     return action.payload;
   } else {
     return state;

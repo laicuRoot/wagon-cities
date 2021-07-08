@@ -16,24 +16,27 @@ import { connect } from 'react-redux';
 
 
 const ActiveCity = (props) => {
-  if (!props.activeCity) {
+  if (!props.selectedCity) {
     return (
       <div className="active-city">
         <p>Select a city...</p>
       </div>
     );
   }
-
+  const img = `https://kitt.lewagon.com/placeholder/cities/${props.selectedCity.slug}`;
   return (
-    <div className="active-city">
-      {console.log(props.activeCity)}
+    <div className="active-city col-sm-12 d-flex text-center justify-content-center align-content-center">
+      <div>
+        <h3> {props.selectedCity.name} - {props.selectedCity.address} </h3>
+      </div>
+      <img src={img} alt="" className='w-100' />
     </div>
   );
 };
 
 function mapStateToProps(state) {
   return {
-    activeCity: state.activeCity
+    selectedCity: state.selectedCity
   };
 }
 
